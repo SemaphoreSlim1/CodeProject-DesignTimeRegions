@@ -76,12 +76,14 @@ namespace DesignTimeRegions
             }
             else if(sender is Selector)
             {
-                (sender as Selector).SelectedItem = designTimeView;
+                var itemsSource = new object[] { designTimeView };
+                (sender as Selector).ItemsSource = itemsSource;
+                (sender as Selector).SelectedItem = itemsSource.First();
             }
             else if(sender is ItemsControl)
             {
                 (sender as ItemsControl).ItemsSource = new object[] { designTimeView };
-            }
+            }            
         }
 
     }
