@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:infrastructure="clr-namespace:Infrastructure;assembly=Infrastructure"
+        xmlns:designTime="clr-namespace:Shell.DesignTime"
+        xmlns:regions="clr-namespace:DesignTimeRegions;assembly=DesignTimeRegions"
         xmlns:local="clr-namespace:Shell"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="1250">
@@ -32,7 +34,7 @@
         
         <GroupBox Grid.Column="0" Header="Module A" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleA}" />
         <GridSplitter Grid.Column="1" />        
-        <GroupBox Grid.Column="2" Header="Module B" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleB}" />
+        <GroupBox Grid.Column="2" Header="Module B" regions:RegionProvider.DesignTimeViewProviderType="{x:Type designTime:ViewProvider}" regions:RegionProvider.RegionName="{x:Static infrastructure:NamedRegions.ModuleB}" />
         <GridSplitter Grid.Column="3" />
         <GroupBox Grid.Column="4" Header="Module C" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleC}" />        
     </Grid>

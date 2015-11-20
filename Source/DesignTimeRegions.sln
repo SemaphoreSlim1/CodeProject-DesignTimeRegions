@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "ModuleB\ModuleB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "ModuleC\ModuleC.csproj", "{B570F7CC-113B-4967-BA4B-39ED35794F0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignTimeRegions", "DesignTimeRegions\DesignTimeRegions.csproj", "{DC235635-5B11-4B50-8D6B-F988F97CB5AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B570F7CC-113B-4967-BA4B-39ED35794F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B570F7CC-113B-4967-BA4B-39ED35794F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B570F7CC-113B-4967-BA4B-39ED35794F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC235635-5B11-4B50-8D6B-F988F97CB5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC235635-5B11-4B50-8D6B-F988F97CB5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC235635-5B11-4B50-8D6B-F988F97CB5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC235635-5B11-4B50-8D6B-F988F97CB5AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
