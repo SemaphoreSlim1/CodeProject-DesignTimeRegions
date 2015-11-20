@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using ModuleA;
 using ModuleB;
+using ModuleC;
 using Prism.Modularity;
 using Prism.Unity;
 using System;
@@ -14,7 +15,8 @@ namespace Shell
         private IEnumerable<Type> moduleTypes = new Type[] 
         {
             typeof(ModuleAModule),
-            typeof(ModuleBModule)
+            typeof(ModuleBModule),
+            typeof(ModuleCModule)
         };
 
         protected override DependencyObject CreateShell()

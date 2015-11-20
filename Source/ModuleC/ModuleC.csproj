@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55427496-5E77-454A-917A-92641E0D9975}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{B570F7CC-113B-4967-BA4B-39ED35794F0E}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shell</RootNamespace>
-    <AssemblyName>Shell</AssemblyName>
+    <RootNamespace>ModuleC</RootNamespace>
+    <AssemblyName>ModuleC</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -80,25 +77,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Demonstration\DesignTime\ViewModel.cs" />
+    <Compile Include="Demonstration\IViewModel.cs" />
+    <Compile Include="Demonstration\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrapper.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Demonstration\ViewModel.cs" />
+    <Compile Include="ModuleCModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -124,25 +109,16 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{7b9055b4-e3ad-4480-8378-9706d09d1b32}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ModuleA\ModuleA.csproj">
-      <Project>{868a93ec-a9b2-4cf1-a329-1a7e64caa834}</Project>
-      <Name>ModuleA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ModuleB\ModuleB.csproj">
-      <Project>{b57edc92-9c0e-4e96-8aa1-ff28818d3521}</Project>
-      <Name>ModuleB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ModuleC\ModuleC.csproj">
-      <Project>{b570f7cc-113b-4967-ba4b-39ed35794f0e}</Project>
-      <Name>ModuleC</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Demonstration\View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
