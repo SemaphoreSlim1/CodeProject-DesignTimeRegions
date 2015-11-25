@@ -5,7 +5,7 @@ using Infrastructure;
 
 namespace Shell.DesignTime
 {
-    public class ViewProvider : DesignTimeViewProviderBase
+    public class ViewProvider : UnityDesignTimeViewProvider
     {
         protected override void RegisterViewsWithContainer()
         {

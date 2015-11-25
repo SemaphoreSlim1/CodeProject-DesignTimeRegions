@@ -1,16 +1,11 @@
-﻿using Microsoft.Practices.Unity;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace DesignTimeRegions
 {
     public abstract class DesignTimeViewProviderBase
-    {
-        protected readonly IUnityContainer container = new UnityContainer();
+    {        
         private readonly IDictionary<string, Type> ViewRegistrations = new Dictionary<string, Type>();
 
         private bool IsInitialized = false;
@@ -29,6 +24,8 @@ namespace DesignTimeRegions
 
         protected abstract void RegisterViewsWithRegions();
 
+        protected abstract object ResolveView(Type viewType);
+
         protected void RegisterViewWithRegion<T>(string regionName)
         {
             if(ViewRegistrations.ContainsKey(regionName) == false)
@@ -46,7 +43,7 @@ namespace DesignTimeRegions
             {
                 try
                 {
-                    view = container.Resolve(viewType);
+                    view = ResolveView(viewType);
                 }catch(Exception ex)
                 {
                     view = new TextBlock() { Text = ex.Message };
