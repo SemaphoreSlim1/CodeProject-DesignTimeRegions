@@ -11,6 +11,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="1250">
     <Window.Resources>
+        <designTime:ViewProvider x:Key="DesignTimeViewProvider" />
         <Style TargetType="{x:Type GroupBox}">
             <Setter Property="BorderBrush" Value="Black" />
             <Setter Property="Margin" Value="5,0,5,5" />
@@ -31,11 +32,11 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        
-        <GroupBox Grid.Column="0" Header="Module A" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleA}" />
+
+        <GroupBox Grid.Column="0" Header="Module A" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleA}" regions:RegionProvider.ViewProvider="{StaticResource DesignTimeViewProvider}" />
         <GridSplitter Grid.Column="1" />
-        <GroupBox Grid.Column="2" Header="Module B" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleB}" />
+        <GroupBox Grid.Column="2" Header="Module B" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleB}" regions:RegionProvider.ViewProvider="{StaticResource DesignTimeViewProvider}" />
         <GridSplitter Grid.Column="3" />
-        <GroupBox Grid.Column="4" Header="Module C" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleC}" />        
+        <GroupBox Grid.Column="4" Header="Module C" prism:RegionManager.RegionName="{x:Static infrastructure:NamedRegions.ModuleC}" regions:RegionProvider.ViewProvider="{StaticResource DesignTimeViewProvider}" />        
     </Grid>
 </Window>
